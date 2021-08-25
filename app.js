@@ -22,7 +22,6 @@ checkButton.addEventListener
                 {
                     const insufficientbalance=billAmount.value- cashGiven.value; 
                     errorHandler("Insufficient Cash Paid");  
-                    lesscashHandler(insufficientbalance); 
                 }
             }
             else
