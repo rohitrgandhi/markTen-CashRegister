@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cash Register</title>
     <link rel="stylesheet" href="/style.css" />
+    <title>Cash Register</title>
 </head>
 
 <body>
@@ -16,14 +16,16 @@
 
         <label for="bill-amount" >Bill Amount: </label>
         <input type="text" id="bill-amount" />
-        <br/>
-        <label for="cash-paid">Cash Paid:</label>
-        <input type="text" id="cash-paid" />    
+        <label for="cash-given">Cash Paid:</label>
+        <input type="text" id="cash-given" />    
+        <button id="check-button">Check</button>
+        
+        <p id="error-message" class="error-message"></p>
+        Amount to be Returned:<output id="difference" class="output"></output>
 
-<br/>
-        <button id="check-Button">Check</button>
         <table class="table">
-            <caption>Return Change:</caption>
+            <caption>Notes to be given back:</caption>
+            
             <tr>
                 <th>Denominations</th>
                 <th>2000</th>
@@ -37,13 +39,13 @@
 
             <tr>
                 <th>No. of Notes</th>
-                <td id="notesgiven"></td>
-                <td id="notesgiven"></td>
-                <td id="notesgiven"></td>
-                <td id="notesgiven"></td>
-                <td id="notesgiven"></td>
-                <td id="notesgiven"></td>
-                <td id="notesgiven"></td>
+                <td class="notesgiven"></td>
+                <td class="notesgiven"></td>
+                <td class="notesgiven"></td>
+                <td class="notesgiven"></td>
+                <td class="notesgiven"></td>
+                <td class="notesgiven"></td>
+                <td class="notesgiven"></td>
             </tr>
 
         </table>

@@ -1,36 +1,54 @@
-var billAmount = document.querySelector("#bill-amount");
+const billAmount = document.querySelector("#bill-amount");
+const cashGiven = document.querySelector("#cash-given");
+const checkButton= document.querySelector("#check-button");
+const message=document.querySelector("#error-message");
+const arrayDenominations = [2000, 500, 100, 20, 10, 5, 1];
+const notesgiven = document.querySelectorAll(".notesgiven");
+const difference=document.querySelector("#difference");
 
-var cashPaid = document.querySelector("#cash-paid");
-console.log(billAmount.value);
-console.log(cashPaid.value);
+checkButton.addEventListener
+    ("click", function onClick()
+        {
+            message.style.display="none";
+            if(billAmount.value > 0) 
+            {
+                if (cashGiven.value >= billAmount.value)
+                {
+                    const returnAmount = cashGiven.value - billAmount.value;
+                    difference.innerText=returnAmount;
+                    calculateChange(returnAmount);
+                } 
+                else 
+                {
+                    const insufficientbalance=billAmount.value- cashGiven.value; 
+                    errorHandler("Insufficient Cash Paid");  
+                    lesscashHandler(insufficientbalance); 
+                }
+            }
+            else
+            {
+                    errorHandler("Enter a number which is greater than 0");
+            }
+        }
+    );
 
-// const denominations = [2000, 500, 100, 20, 10, 5, 1]
-// const notesgiven = document.querySelectorAll("#notesgiven");
-// button.addEventListener("click", ()=>console.log("clicked"));
-// button.addEventListener("click", function onClick() {
-//             if(cashPaid > 0) {
-//                 if (cashPaid.value >= billAmount.value)
-//                  {
-//                     const returnAmount = cashPaid.value - billAmount.value;
+            function calculateChange(returnAmount)
+            {
+                for (let i = 0; i < arrayDenominations.length; i++) 
+                {
+                    const quotient = Math.trunc(returnAmount / arrayDenominations[i]);
+                    returnAmount= returnAmount % arrayDenominations[i];
+                    notesgiven[i].innerText=quotient;
+                }
 
-//                     // function returnAmt()
-//                 } 
-//                 else {
-//                     errorHandler();
-//                 }
-//             }
-//             else{
-//                     errorHandler();
-//             }})
-
-//         function returnAmt() {
-//             for (var i = 0; i < denominations.value; i++) {
-//                 returnAmount = returnAmount / denominations[i];
-//                 returnAmount
-
-//             }
-//         }
-
-//         function errorHandler() {
-//             return console.log("Invalid input");
-//         }
+            }
+            
+            function lesscashHandler(insufficientbalance)
+            {
+                message.innerText=insufficientbalance;
+            }
+            function errorHandler(msg)
+            {
+                message.style.display="block";
+                message.innerText=msg;
+            }
