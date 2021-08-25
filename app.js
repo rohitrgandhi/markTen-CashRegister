@@ -42,10 +42,10 @@ checkButton.addEventListener
 
             }
             
-            function lesscashHandler(insufficientbalance)
-            {
-                message.innerText=insufficientbalance;
-            }
+            // function lesscashHandler(insufficientbalance)
+            // {
+            //     message.innerText=insufficientbalance;
+            // }
             function errorHandler(msg)
             {
                 message.style.display="block";
