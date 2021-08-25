@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,56 +10,46 @@
 </head>
 
 <body>
-    <header>
-        <h1>CASH REGISTER MANAGER</h1>
-        <p>Enter Bill Amount and Cash Paid by the customer and know minimum Number of Notes to return</p>
-    </header>
+    <div class="container">
+            <h1>CASH REGISTER MANAGER</h1>
+            <p>Enter Bill Amount and Cash Paid by the customer and know minimum Number of Notes to return</p>
 
-    <div>
-        <h3>Bill Amount    
-            <textarea id="billAmount" cols="15" rows="1"></textarea> 
-        </h3>
-        
-        <label for="billAmount" id="bill-amount"></label>
-        
+        <label for="bill-amount" >Bill Amount: </label>
+        <input type="text" id="bill-amount" />
+        <br/>
+        <label for="cash-paid">Cash Paid:</label>
+        <input type="text" id="cash-paid" />    
+
+<br/>
+        <button id="check-Button">Check</button>
+        <table class="table">
+            <caption>Return Change:</caption>
+            <tr>
+                <th>Denominations</th>
+                <th>2000</th>
+                <th>500</th>
+                <th>100</th>
+                <th>20</th>
+                <th>10</th>
+                <th>5</th>
+                <th>1</th>
+            </tr>
+
+            <tr>
+                <th>No. of Notes</th>
+                <td id="notesgiven"></td>
+                <td id="notesgiven"></td>
+                <td id="notesgiven"></td>
+                <td id="notesgiven"></td>
+                <td id="notesgiven"></td>
+                <td id="notesgiven"></td>
+                <td id="notesgiven"></td>
+            </tr>
+
+        </table>
+
     </div>
-
-    <div>
-        <h3>Cash Paid
-            <textarea id="cashPaid" cols="15" rows="1"></textarea> 
-        </h3>
-        <label for="cashPaid" id="cash-paid"></label>
-    </div>
-
-    <div>     
-<!-- error Handler -->
-    </div>
-    <div>
-        <button id="btn">Check</button>
-    </div>
-<table>
-    <tr>
-    <th>Denominations</th>
-    <th>2000</th>
-    <th>500</th>
-    <th>100</th>
-    <th>20</th>
-    <th>10</th>
-    <th>5</th>
-    <th>1</th>
-    </tr>
-
-    <tr>
-        <td>No. of Notes to be given</td>
-        <td id="notesgiven"></td>
-        <td id="notesgiven"></td>
-        <td id="notesgiven"></td>
-        <td id="notesgiven"></td>
-        <td id="notesgiven"></td>
-        <td id="notesgiven"></td>
-        <td id="notesgiven"></td>
-    </tr>
-
-</table>
 </body>
+<script src="/app.js"></script>
+
 </html>

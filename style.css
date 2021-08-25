@@ -5,19 +5,23 @@ body{
     background-color: black;
     color:whitesmoke;
     text-align: center;
+    align-items: center;
+}
+.container{
+    align-items: center;
+    text-align: center;
+    margin:1px;   
+    display:flex;
+    flex-direction: column;
+    width: 99vw;
+}
+button{
+    margin:10px;
 }
 
-header{
-    padding: 1rem;
-    
-}
-
-h3{
-    text-align:center;
-}
 
 table{
-    text-align: center;
     border: 10px;
     border-color: whitesmoke;
+    text-align: center;
 }
