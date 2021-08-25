@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cash Register</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>CASH REGISTER MANAGER</h1>
+        <p>Enter Bill Amount and Cash Paid by the customer and know minimum Number of Notes to return</p>
+    </header>
+
+    <div>
+        <h3>Bill Amount    
+            <textarea id="billAmount" cols="15" rows="1"></textarea> 
+        </h3>
+        
+        <label for="billAmount" id="bill-amount"></label>
+        
+    </div>
+
+    <div>
+        <h3>Cash Paid
+            <textarea id="cashPaid" cols="15" rows="1"></textarea> 
+        </h3>
+        <label for="cashPaid" id="cash-paid"></label>
+    </div>
+
+    <div>     
+<!-- error Handler -->
+    </div>
+    <div>
+        <button id="btn">Check</button>
+    </div>
+<table>
+    <tr>
+    <th>Denominations</th>
+    <th>2000</th>
+    <th>500</th>
+    <th>100</th>
+    <th>20</th>
+    <th>10</th>
+    <th>5</th>
+    <th>1</th>
+    </tr>
+
+    <tr>
+        <td>No. of Notes to be given</td>
+        <td id="notesgiven"></td>
+        <td id="notesgiven"></td>
+        <td id="notesgiven"></td>
+        <td id="notesgiven"></td>
+        <td id="notesgiven"></td>
+        <td id="notesgiven"></td>
+        <td id="notesgiven"></td>
+    </tr>
+
+</table>
+</body>
+</html>
