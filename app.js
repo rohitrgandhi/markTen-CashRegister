@@ -6,8 +6,8 @@ const arrayDenominations = [2000, 500, 100, 20, 10, 5, 1];
 const notesgiven = document.querySelectorAll(".notesgiven");
 const difference=document.querySelector("#difference");
 
-checkButton.addEventListener
-    ("click", function onClick()
+checkButton.addEventListener("click", onClick);
+function onClick()
         {
             message.style.display="none";
             if(billAmount.value > 0) 
@@ -15,21 +15,26 @@ checkButton.addEventListener
                 if (cashGiven.value >= billAmount.value)
                 {
                     const returnAmount = cashGiven.value - billAmount.value;
+                    if(returnAmount>=0)
+                    {
                     difference.innerText=returnAmount;
                     calculateChange(returnAmount);
-                } 
-                else 
-                {
-                    const insufficientbalance=billAmount.value- cashGiven.value; 
+                    }
+                    else 
+                    {
+                    difference.innerText="-";
                     errorHandler("Insufficient Cash Paid");  
-                }
+                    }
+                } 
+                else
+                errorHandler("Insufficient Cash Paid");  
+                
             }
             else
             {
                     errorHandler("Enter a number which is greater than 0");
             }
         }
-    );
 
             function calculateChange(returnAmount)
             {
