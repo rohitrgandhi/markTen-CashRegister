@@ -6,7 +6,6 @@ const arrayDenominations = [2000, 500, 100, 20, 10, 5, 1];
 const notesgiven = document.querySelectorAll(".notesgiven");
 const difference=document.querySelector("#difference");
 
-checkButton.addEventListener("click", onClick);
 function onClick()
         {
             message.style.display="none";
@@ -20,15 +19,9 @@ function onClick()
                     difference.innerText=returnAmount;
                     calculateChange(returnAmount);
                     }
-                    else 
-                    {
-                    difference.innerText="-";
-                    errorHandler("Insufficient Cash Paid");  
-                    }
+                    else negativeError();
                 } 
-                else
-                errorHandler("Insufficient Cash Paid");  
-                
+                else negativeError();
             }
             else
             {
@@ -44,7 +37,11 @@ function onClick()
                     returnAmount= returnAmount % arrayDenominations[i];
                     notesgiven[i].innerText=quotient;
                 }
+            }
 
+            function negativeError(){
+                difference.innerText="-";
+                errorHandler("Insufficient Cash Paid");  
             }
             
             function errorHandler(msg)
@@ -52,3 +49,5 @@ function onClick()
                 message.style.display="block";
                 message.innerText=msg;
             }
+
+checkButton.addEventListener("click", onClick);
